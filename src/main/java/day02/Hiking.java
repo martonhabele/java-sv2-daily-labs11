@@ -6,10 +6,7 @@ public class Hiking {
     public int getPlusElevation(List<Integer> elevations) {
         int fullElevation = 0;
         for (int i = 1; i < elevations.size(); i++) {
-            int difference = elevations.get(i) - elevations.get(i - 1);
-            if (difference > 0) {
-                fullElevation += difference;
-            }
+            fullElevation += Math.max(elevations.get(i) - elevations.get(i - 1), 0);
         }
         return fullElevation;
     }
